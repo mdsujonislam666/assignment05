@@ -1,7 +1,10 @@
 const storeData = [];
 
 // heart section
-document.getElementById("heart-icon").addEventListener("click", function (e) {
+
+const heartButton = document.getElementsByClassName('heart-icon');
+for(let j =0; j<heartButton.length; j++ ){
+    heartButton[j].addEventListener("click", function (e) {
     e.preventDefault();
     const heartCount = document.getElementById('heart-Count').innerText;
     const heartCountNumber = parseInt(heartCount);
@@ -11,9 +14,14 @@ document.getElementById("heart-icon").addEventListener("click", function (e) {
 
 })
 
-// call section
+}
 
-document.getElementById('calling').addEventListener('click', function (e) {
+// call section
+const callButton = document.getElementsByClassName('call-button');
+for(let i =0;i<callButton.length; i++){
+
+
+    callButton[i].addEventListener('click', function (e) {
     e.preventDefault();
     console.log('clicked');
 
@@ -25,8 +33,9 @@ document.getElementById('calling').addEventListener('click', function (e) {
     }
 
     const data = {
-        name: "জাতীয় জরুরি সেবা22",
-        date: new Date().toLocaleDateString()
+        name: 'sujon',
+        number:'555',
+        time: new Date().toLocaleTimeString("en-US", { hour12: true })
     }
     storeData.push(data);
 
@@ -38,9 +47,9 @@ document.getElementById('calling').addEventListener('click', function (e) {
         <div class="flex justify-between items-center bg-[#FFE3E2] p-5 rounded-2xl mt-3">
                             <div>
                                 <h1 class="font-extrabold text-[12px]">${data.name}</h1>
-                                <p class="text-[12px]">${data.date}</p>
+                                <p class="text-[12px]">${data.number}</p>
                             </div>
-                            <p class="text-[12px]">11:36:58 AM</p>
+                            <p class="text-[12px]">${data.time}</p>
                         </div>
         `
         addHistory.appendChild(div);
@@ -49,5 +58,12 @@ document.getElementById('calling').addEventListener('click', function (e) {
     const totalCoinCount = coinCount - 20;
     document.getElementById('coin-count').innerText = totalCoinCount;
 
+});
+}
+
+
+// call history clear button
+document.getElementById('clearAll-button').addEventListener('click',function(){
+    const removeHistoryContainer = document.getElementById('add-history').style.display= "none";
 
 })
