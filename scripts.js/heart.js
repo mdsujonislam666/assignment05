@@ -91,5 +91,6 @@ for (let i = 0; i < copyButton.length; i++) {
         const number = callButton.dataset.number;
         await navigator.clipboard.writeText(number);
         copyCountTracker.textContent = `${Number(copyCountTracker.textContent) + 1}`;
+        alert(`নাম্বার কপি হয়েছে ${number}`)
     })
 }
