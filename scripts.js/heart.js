@@ -32,7 +32,7 @@ for (let i = 0; i < callButton.length; i++) {
         console.log(coinCount);
 
         if (coinCount < 20) {
-            alert('you have not coin for calling');
+            alert(' ❌ আপনার পর্যাপ্ত কয়েন নেই। কল করতে কমপক্ষে  ২০ কয়েন লাগবে।');
             return;
         }
         const callButton = dataElement.querySelector('.call-button');
